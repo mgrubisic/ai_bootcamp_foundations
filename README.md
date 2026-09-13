@@ -89,11 +89,10 @@ dataset is used throughout the day.
 
 ### Day 3 - ensembles, hyperparameters tuning and interpretability
 
-| | Notebook | |
-|---|---|---|
-| 3a | [3a_Cross-Validation](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/5_Cross-Validation.ipynb) | Cross-validation strategies and hyperparameter tuning. |
-| 3b | [3b_Ensemble_Learning_House_Prices](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/6_Ensemble_Learning_House_Prices.ipynb) | Random forest, gradient boosting, and stacking on house prices. |
-| 3c | [3c_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
+|    | Notebook                                                                                                                                                            | |
+|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| 3a | [3a_Ensemble_Learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/6_Ensemble_Learning.ipynb) | Random forest, gradient boosting, and stacking on house prices. |
+| 3b | [3b_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb)    | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
 
 ### Day 4 - ANN, generative AI and agents
 
