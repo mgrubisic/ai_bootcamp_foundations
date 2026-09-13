@@ -1,6 +1,6 @@
 # AI Bootcamp — Foundations of AI
 
-Repository containts the course materials of the AI Bootcamp - Foundations of AI, one week course held by [LARES](https://www.lares.fer.hr/lares), [Faculty of Electrical Engineering and Computing](https://www.fer.unizg.hr/en?), University of Zagreb.
+Repository contains the course materials of the AI Bootcamp - Foundations of AI, one week course held by [LARES](https://www.lares.fer.hr/lares), [Faculty of Electrical Engineering and Computing](https://www.fer.unizg.hr/en?), University of Zagreb.
 
 Everything runs in **Google Colab**, in your browser. Nothing to install, no
 GPU needed, no credit card. Data and notebooks are fetched automatically from
@@ -51,6 +51,7 @@ The notebooks read it from there. It never appears in the code, and it never
 travels to GitHub with a saved copy.
 
 **If any of the three steps fails, tell us as soon as possible.** 
+
 ---
 
 ## Notebooks
@@ -86,13 +87,13 @@ dataset is used throughout the day.
 | 2d | [2d_Decision_Trees_and_SVM](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2d_Decision_Trees_and_SVM.ipynb)   | Decision tree on Iris petals, then SVM margins and kernel comparison on small 2D datasets.                                                |
 | 3  | [3_Unsupervised_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3_Unsupervised_learning.ipynb)     | Unsupervised learning with K-means clustering, hierarchical clustering, and PCA.                                                          |
 
-### Day 3 — ensembles, hyperparameters tuning and interpretability
+### Day 3 - ensembles, hyperparameters tuning and interpretability
 
 | | Notebook | |
 |---|---|---|
-| 5 | [5_Cross-Validation](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/5_Cross-Validation.ipynb) | Cross-validation strategies and hyperparameter tuning. |
-| 6 | [6_Ensemble_Learning_House_Prices](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/6_Ensemble_Learning_House_Prices.ipynb) | Random forest, gradient boosting, and stacking on house prices. |
-| 7 | [7_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
+| 3a | [3a_Cross-Validation](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/5_Cross-Validation.ipynb) | Cross-validation strategies and hyperparameter tuning. |
+| 3b | [3b_Ensemble_Learning_House_Prices](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/6_Ensemble_Learning_House_Prices.ipynb) | Random forest, gradient boosting, and stacking on house prices. |
+| 3c | [3c_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
 
 ### Day 4 - ANN, generative AI and agents
 
@@ -113,14 +114,15 @@ Optional, not covered during the course:
 
 | | Notebook | |
 |---|---|---|
-| 4x | [4x_NN_House_prices](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4x_NN_House_prices.ipynb) |
-| 4y | [4y_NN_Iris](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4y_NN_Iris.ipynb) |
-| 4z | [4z_NN_Fashion_MNIST](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4z_NN_Fashion_MNIST.ipynb) |
+| 4x | [4x_NN_House_prices](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4x_NN_House_prices.ipynb) | A simple MLP neural network for regression on the same housing data, implemented with Tensorflow and Keras. |
+| 4y | [4y_NN_Iris](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4y_NN_Iris.ipynb) | A simple MLP neural network for classification on the Iris data, implemented with Tensorflow and Keras. |
+| 4z | [4z_NN_Fashion_MNIST](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/4z_NN_Fashion_MNIST.ipynb) | A convolutional neural network for classification on the MNIST dataset. |
 
 ### Day 5 - private Kaggle competition
 
 | | Notebook | |
 |---|---|---|
+| 5 | [5_Kaggle](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/5_Kaggle.ipynb) | Starter notebook for the competition: data loaded, a working baseline and a prepared submission cell. |
 
 ---
 
@@ -164,7 +166,7 @@ nothing. You will need to install the packages the notebooks import, and set
 |---|---|
 | **HTTP 429** | a rate limit; the code retries on its own, so wait. The message says *which* limit was hit — if it mentions *per day*, your daily quota is gone and the notebook moves to the fallback model by itself |
 | **HTTP 503** | the model is overloaded on Google's side, nothing to do with your key; the code waits and then switches models |
-| **HTTP 400** with a model name | model names change often — run the *"which models does this key actually have"* cell in notebook 9 to list the exact names your key accepts |
+| **HTTP 400** with a model name | model names change often — run the *"which models does this key actually have"* cell in notebook 4b to list the exact names your key accepts |
 | **HTTP 403** | the key is invalid, or AI Studio is blocked on that account |
 | answer stops mid-sentence | the output token budget ran out; raise `max_tokens` — the notebooks flag this explicitly when it happens |
 
@@ -184,7 +186,6 @@ nothing. You will need to install the packages the notebooks import, and set
 ```
 notebooks/    notebooks, plus lares_llm.py
 data/         datasets, images and documents — fetched automatically
-docs/         setup guide (LaTeX source and PDF)
 ```
 
 The material stays available after the course.
