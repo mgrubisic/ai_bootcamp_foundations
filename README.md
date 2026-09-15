@@ -83,16 +83,15 @@ dataset is used throughout the day.
 |----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | 2a | [2a_Regression_Fundamentals](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2a_Regression_Fundamentals.ipynb) | Simple linear regression on one housing feature, progressively adding more features, then Ridge and Lasso regularization on the full set. |
 | 2b | [2b_KNN_Classification](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2b_KNN_Classification.ipynb)           | K-Nearest Neighbors classification on the Iris dataset, exploring how the number of neighbours changes the decision boundary.             |
-| 2c | [2c_Logistic_Regression](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2c_Logistic_Regression.ipynb)         | Binary logistic regression boundaries, their linear limitation, and extension to three Iris classes with softmax.                         |
-| 2d | [2d_Decision_Trees_and_SVM](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2d_Decision_Trees_and_SVM.ipynb)   | Decision tree on Iris petals, then SVM margins and kernel comparison on small 2D datasets.                                                |
-| 3  | [3_Unsupervised_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3_Unsupervised_learning.ipynb)     | Unsupervised learning with K-means clustering, hierarchical clustering, and PCA.                                                          |
+| 2c | [2c_Logistic_Regression](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2c_Logistic_Regression.ipynb)         | Binary logistic regression boundaries, their linear limitation, and extension to three Iris classes with softmax. |
+| 2d | [2d_Decision_Trees_and_SVM](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/2d_Decision_Trees_and_SVM.ipynb)   | Decision tree on Iris petals, then SVM margins and kernel comparison on small 2D datasets.  |
 
 ### Day 3 - ensembles, hyperparameters tuning and interpretability
 
 |    | Notebook                                                                                                                                                         | |
 |----|------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
 | 3a | [3a_Unsupervised_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3a_Unsupervised_learning.ipynb)  | Unsupervised learning with K-means clustering, hierarchical clustering, and PCA. |
-| 3b | [3a_Ensemble_Learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/6_Ensemble_Learning.ipynb)           | Random forest, gradient boosting, and stacking on house prices. |
+| 3b | [3b_Ensemble_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3b_Ensemble_learning.ipynb)          | Random forest, gradient boosting, and stacking on house prices. |
 | 3c | [3b_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
 
 ### Day 4 - ANN, generative AI and agents
