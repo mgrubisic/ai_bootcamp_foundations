@@ -16,8 +16,8 @@ import requests
 # each student has their own key, so daily limits are not the problem -
 # what decides the order is which model is actually answering today.
 CHAINS = {
-    "chat":  ["gemma-4-31b-it", "gemini-3.1-flash-lite"],
-    "agent": ["gemma-4-31b-it", "gemini-3.1-flash-lite"],
+    "chat":  ["gemma-4-31b-it", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
+    "agent": ["gemma-4-31b-it", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
     # big prompts need TPM; gemma has only 16K, so it is no use here
     "rag":   ["gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
 }
@@ -47,8 +47,8 @@ def which(task="chat"):
 
 def call(contents, *, tools=None, system=None, json_schema=None, search=False,
          thinking=False, task="chat", model=None, temperature=0.0,
-         max_tokens=1000, verbose=True):
-    """Send a request. Retry twice on server errors, then try the next model."""
+         max_tokens=1000, tries=5, verbose=True):
+    """Send a request. Retry on server errors, then try the next model."""
     config = {"temperature": temperature, "maxOutputTokens": max_tokens,
               "thinkingConfig": {"thinkingLevel": "high" if thinking else "minimal"}}
     if json_schema:
@@ -64,7 +64,7 @@ def call(contents, *, tools=None, system=None, json_schema=None, search=False,
         body["tools"] = [{"google_search": {}}]
 
     for mdl in ([model] if model else CHAINS.get(task, CHAINS["chat"])):
-        for attempt in range(3):
+        for attempt in range(tries):
             start = time.time()
             r = requests.post(f"{BASE}/{mdl}:generateContent",
                               params={"key": API_KEY}, json=body, timeout=120)
