@@ -88,11 +88,11 @@ dataset is used throughout the day.
 
 ### Day 3 - ensembles, hyperparameters tuning and interpretability
 
-|    | Notebook                                                                                                                                                         | |
-|----|------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| 3a | [3a_Unsupervised_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3a_Unsupervised_learning.ipynb)  | Unsupervised learning with K-means clustering, hierarchical clustering, and PCA. |
-| 3b | [3b_Ensemble_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3b_Ensemble_learning.ipynb)          | Random forest, gradient boosting, and stacking on house prices. |
-| 3c | [3b_Hyperparameters_Search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
+|    | Notebook                                                                                                                                                        | |
+|----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| 3a | [3a_Unsupervised_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3a_Unsupervised_learning.ipynb) | Unsupervised learning with K-means clustering, hierarchical clustering, and PCA. |
+| 3b | [3b_Ensemble_learning](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/3b_Ensemble_learning.ipynb)         | Random forest, gradient boosting, and stacking on house prices. |
+| 3c | [3c_Hyperparameter_search](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/7_Hyperparameters_Search.ipynb) | Grid search, random search, and Bayesian optimization for hyperparameter tuning. |
 
 ### Day 4 - ANN, generative AI and agents
 
