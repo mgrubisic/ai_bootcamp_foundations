@@ -12,21 +12,12 @@ import requests
 
 # --- configuration: edit when quotas change or new models arrive -----------
 
-# if the first model fails, the next one is tried.
-# each student has their own key, so daily limits are not the problem -
-# what decides the order is which model is actually answering today.
+# if the first model fails, the next one is tried
 CHAINS = {
     "chat":  ["gemma-4-31b-it", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
     "agent": ["gemma-4-31b-it", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
-    # big prompts need TPM; gemma has only 16K, so it is no use here
+    # a whole document in the context; gemma's budget is too small for that
     "rag":   ["gemini-3.1-flash-lite", "gemini-3.5-flash-lite"],
-}
-
-# copy from ai.dev/usage?tab=rate-limit if these change
-LIMITS = {
-    "gemma-4-31b-it":        {"rpm": 30, "tpm":  16_000, "rpd": 14_400},
-    "gemini-3.1-flash-lite": {"rpm": 15, "tpm": 250_000, "rpd":     500},
-    "gemini-3.5-flash-lite": {"rpm": 15, "tpm": 250_000, "rpd":     500},
 }
 
 BASE = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -38,6 +29,11 @@ LAST = {"model": None, "input": 0, "output": 0, "thoughts": 0, "seconds": 0.0}
 def set_key(key):
     global API_KEY
     API_KEY = key
+
+
+def which(task="chat"):
+    """Which model this exercise starts with."""
+    return CHAINS.get(task, CHAINS["chat"])[0]
 
 
 def call(contents, *, tools=None, system=None, json_schema=None, search=False,
@@ -73,7 +69,7 @@ def call(contents, *, tools=None, system=None, json_schema=None, search=False,
             time.sleep(5)        # server is busy or we are too fast
 
     return {"text": "[all models failed]", "thinking": "", "tool_calls": [],
-            "sources": [], "model": None, "finish": "ERROR"}
+            "sources": [], "queries": [], "model": None, "finish": "ERROR"}
 
 
 def _parse(response, mdl, seconds):
@@ -100,7 +96,8 @@ def _parse(response, mdl, seconds):
             "tool_calls": tool_calls, "model": mdl,
             "finish": candidate.get("finishReason"),
             "sources": [c["web"] for c in grounding.get("groundingChunks", [])
-                        if "web" in c]}
+                        if "web" in c],
+            "queries": grounding.get("webSearchQueries", [])}
 
 
 def ask(prompt, **kw):
@@ -110,11 +107,7 @@ def ask(prompt, **kw):
 
 def usage(label="last call"):
     """Print what the last call cost, and the running total."""
-    limit = LIMITS.get(LAST["model"], {"rpm": 10, "tpm": 250_000, "rpd": 250})
-    tokens = max(1, LAST["input"] + LAST["output"] + LAST["thoughts"])
     print(f"  {label}: {LAST['model']}  in {LAST['input']}  out {LAST['output']}"
           f"  thinking {LAST['thoughts']}  {LAST['seconds']:.1f}s")
     print(f"  total: {STATS['requests']} calls  in {STATS['input']}"
           f"  out {STATS['output']}  thinking {STATS['thoughts']}")
-    print(f"  limits: rpm={limit['rpm']} tpm={limit['tpm']:,} rpd={limit['rpd']:,}"
-          f"  -> at {tokens} tokens/call you can do {min(limit['rpm'], limit['tpm'] // tokens)} calls/min")
