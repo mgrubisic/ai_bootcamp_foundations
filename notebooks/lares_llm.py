@@ -40,11 +40,6 @@ def set_key(key):
     API_KEY = key
 
 
-def which(task="chat"):
-    """Which model this exercise starts with."""
-    return CHAINS.get(task, CHAINS["chat"])[0]
-
-
 def call(contents, *, tools=None, system=None, json_schema=None, search=False,
          thinking=False, task="chat", model=None, temperature=0.0,
          max_tokens=1000, tries=5, verbose=True):
