@@ -12,7 +12,7 @@ this repository.
 
 > **Use a personal Google account (`@gmail.com`), not a corporate one.**
 > Managed Google Workspace accounts frequently have Colab or Google AI Studio
-> blocked by an administrator, and that is not something we can usually fix in the duration of the course.
+> blocked by an administrator.
 
 ### 1. Check that Colab works
 
@@ -22,18 +22,16 @@ everything works and you can close the tab.
 
 **Do not request a GPU runtime.** The entire course runs on CPU. Free GPU quota
 is limited and shared, and spending it changes nothing except that it will not
-be there when we might actually need it for code execution.
+be there when we might need it for code execution.
 
 ### 2. Create a Gemini API key
 
-Needed on day 4, for the language model and agent sessions. Create it now so
-that any account problem surfaces while there is still time. Free, no payment
+Needed on day 4, for the language model and agent sessions. Free, no payment
 method required.
 
 1. Open [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
 2. Click **Create API key** and copy the result somewhere safe
-3. If a project picker appears, choose any project or create a new one — it
-   does not matter which
+3. If a project picker appears, choose any project or create a new one
 
 **Everyone needs their own key.** We do not share one, because the daily and
 per-minute quotas are counted per account.
@@ -49,8 +47,6 @@ secrets.
 
 The notebooks read it from there. It never appears in the code, and it never
 travels to GitHub with a saved copy.
-
-**If any of the three steps fails, tell us as soon as possible.** 
 
 ---
 
@@ -71,11 +67,9 @@ Optional, not covered during the course:
 
 | | Notebook | |
 |---|---|---|
-| 1x | [1x_Going_further_feature_selection](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/1x_Going_further_feature_selection.ipynb) | Wrapper and embedded feature selection methods, continuing Part 5 of 1a. |
+| 1x | [1x_Going_further_feature_selection](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/1x_Going_further_feature_selection.ipynb) | Wrapper and embedded feature selection methods, continuing on the notebook 1a. |
 | 1y | [1y_Going_further_classification](https://colab.research.google.com/github/unizg-fer-lares/ai_bootcamp_foundations/blob/main/notebooks/1y_Going_further_classification.ipynb) | The same processing steps applied to a classification problem, on the Iris dataset used again on day 2. |
 
-Notebooks 1b and 1x read the train/test split saved by 1a. The Ames Housing
-dataset is used throughout the day.
 
 ### Day 2 - supervised learning (regression and classification), unsupervised learning
 
@@ -107,7 +101,7 @@ Notebooks 4b, 4c and 4d require the API key from step 2.
 
 Notebooks 4b-4d import [`notebooks/lares_llm.py`](notebooks/lares_llm.py) — a
 small shared module holding retries, token accounting and the model fallback
-chain. Worth reading; it is about two hundred lines.
+chain.
 
 Optional, not covered during the course:
 
