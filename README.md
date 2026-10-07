@@ -2,8 +2,7 @@
 
 Repository contains the course materials of the AI Bootcamp - Foundations of AI, one week course held by [LARES](https://www.lares.fer.hr/lares), [Faculty of Electrical Engineering and Computing](https://www.fer.unizg.hr/en?), University of Zagreb.
 
-Everything runs in **Google Colab**, in your browser. Nothing to install, no
-GPU needed, no credit card. Data and notebooks are fetched automatically from
+Everything runs in **Google Colab**, in the browser, with data and notebooks fetched automatically from
 this repository.
 
 ---
